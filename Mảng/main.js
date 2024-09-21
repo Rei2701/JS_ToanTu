@@ -41,4 +41,26 @@ console.log('hoTen', hoTen);
 var hoTen = arrName.pop();
 console.log('hoTen',hoTen);
 
+//---------------------------- DOM qua tag Name ---------------------------
+var arrTagSection = document.getElementsByTagName('section');
+// console.log(arrTagSection);
+// arrTagSection[1].innerHTML = 'Tôi đã đổi thẻ này bằng TagName';
+// arrTagSection[2].style.color = 'red';
+for (var index = 0; index < arrTagSection.length; index++) {
+    arrTagSection[index].className = 'badge bg-secondary';
+}
 
+//---------------------------- Query Selector và Query Selector all ---------------------------
+/*
+    .querySelectorAll (selector): Khi DOM dựa vào querySelectorAll thì kết quả trả về là 1 mảng. Lưu ý:
+    Nếu như chỉ có 1 thẻ khớp thì selector đó vẫn trả về 1 mảng và mảng đó có 1 phần tử. Nếu không khớp
+    phần tử nào hết thì kết quả là mảng rỗng
+*/
+
+document.querySelector('#btnDangNhap').onclick = function(event){
+    event.preventDefault(); // Hàm này để chặn sự kiện reload mặc định của browser khi submit
+
+    var arrTagInput = document.querySelectorAll('#form input');
+    console.log('taikhoan',arrTagInput[0].value);
+    console.log('taikhoan',arrTagInput[1].value);
+}
